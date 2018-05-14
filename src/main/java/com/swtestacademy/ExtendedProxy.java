@@ -18,13 +18,15 @@ public class ExtendedProxy extends DefaultRemoteProxy  implements TestSessionLis
     private static Recorder screenRecorder;
     private static String RECORD_VIDEO = "recordVideo";
     private static Boolean record;
+    private static Boolean screnshot;
+    private static ScreenCapture ssCapture = new ScreenCapture();
+    private static String folderNamebySession;
 
     @Override
     public void beforeCommand(TestSession session, HttpServletRequest request,
                               HttpServletResponse response) {
         System.out.println("****** SWTESTACADEMY *****");
-
-
+      //  ssCapture.capture(folderNamebySession,request.getRequestURI());
     }
 
 
@@ -50,6 +52,5 @@ public class ExtendedProxy extends DefaultRemoteProxy  implements TestSessionLis
             screenRecorder.stopScreenRecorder(session.getInternalKey());
 
     }
-
 
 }
